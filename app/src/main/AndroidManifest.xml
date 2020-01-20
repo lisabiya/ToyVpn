@@ -4,15 +4,16 @@
     package="xyz.hexene.localvpn">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_vpn"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".LocalVPN"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,12 +34,7 @@
 
         <activity
             android:name=".toy.ToyVpnClient"
-            android:configChanges="orientation|keyboardHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:configChanges="orientation|keyboardHidden" />
         <service
             android:name=".toy.ToyVpnService"
             android:permission="android.permission.BIND_VPN_SERVICE">
